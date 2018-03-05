@@ -24,14 +24,6 @@ class App extends Component {
         console.log(stocks);
         this.setState({stocks: stocks})
       })
-      // .then(response => response.data['Stock Quotes'].map((item, index) => {
-      //   let list = [];
-      //   list.push(item['2. price'])
-      //   console.log(list)
-      //   this.setState({ stocks: list})
-      // }))
-    // console.log(this.state.stocks)
-    // console.log(response.data['Stock Quotes'][0]['2. price'])
     e.preventDefault();
   }
 
