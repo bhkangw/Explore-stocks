@@ -1,7 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+# A React Stock Ticker Application
+A React web application that allows a user to enter one or more stock ticker symbols and display price info. Data comes from REST API (https://alphavantage.co).
 
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
+## Setting up Project and Dependencies
+1. Clone this repository on your local machine:
+
+
+    `git clone https://github.com/bhkangw/explore-stocks`
+
+2. Enter the directory **Explore-stocks** (`cd ./Explore-stocks`)
+3. Once in the root project directory run the command: `npm install`
+
+## Running the Project
+1. Navigate to the root directory and run the command `npm start` to start the development server.
+
+2. If the project is running successfully you will see the application on localhost on port 3000!
+
+## Screenshot
+![Alt text](screenshot.png)
 
 ## Table of Contents
 
