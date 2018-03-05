@@ -16,7 +16,7 @@ class App extends Component {
   handleSubmit(e) {
     // prevents empty submission
     if (this.refs.stock.value === '') {
-      alert('Cannot be blank')
+      alert('Field cannot be blank; please enter a stock symbol')
     }
     const symbols = this.refs.stock.value // const for input field value
     // use axios to make an http get request to API using symbols as params
@@ -33,7 +33,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Explore Consulting Stock Ticker</h2>
+          <h2>Explore Cons. Stock Ticker</h2>
         </div>
 
         <div className='jumbotron container'>
@@ -48,7 +48,7 @@ class App extends Component {
 
         <div className='container'>
           {Object.keys(this.state.stocks).map((key, index) => (
-            <div id='stocks-container'>
+            <div id='stocks-container' key={index}>
               <span className='left'>{this.state.stocks[key]['1. symbol']}</span>
               <span className='right'><NumberFormat value={this.state.stocks[key]['2. price']} displayType={'text'} decimalScale={2} thousandSeparator={true} prefix={'$'} /></span>
             </div>
