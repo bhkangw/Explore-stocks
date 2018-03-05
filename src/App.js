@@ -43,6 +43,7 @@ class App extends Component {
             </div>
           </form>
         </div>
+
         <div className='container'>
           {Object.keys(this.state.stocks).map((key, index) => (
             <div id='stocks-container'>
