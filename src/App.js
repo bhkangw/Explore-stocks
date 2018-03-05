@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios';
-var NumberFormat = require('react-number-format');
+import axios from 'axios'; // for making http requests to API
+var NumberFormat = require('react-number-format'); // to format stock price
 
 class App extends Component {
   constructor(props) {
@@ -14,16 +14,18 @@ class App extends Component {
   }
 
   handleSubmit(e) {
+    // prevents empty submission
     if (this.refs.stock.value === '') {
       alert('Cannot be blank')
     }
-    const symbols = this.refs.stock.value
+    const symbols = this.refs.stock.value // const for input field value
+    // use axios to make an http get request to API using symbols as params
     axios.get('https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=' + symbols + '&apikey=0B24087DFLZ21EKU')
       .then(response => {
-        const stocks = response.data['Stock Quotes'];
-        console.log(stocks);
-        this.setState({stocks: stocks})
+        const stocks = response.data['Stock Quotes']; // store API's stock quotes array as stocks
+        this.setState({stocks: stocks}) // set state to stocks
       })
+    this.refs.stock.value = ''; // resets input field to blank
     e.preventDefault();
   }
 
